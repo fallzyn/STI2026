@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fila Mack</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="header">
+        <h1>Fila Mack</h1>
+      </header>
+
+      <section class="actions" aria-label="Ações da fila">
+        <button id="emit-ticket" type="button">Emitir senha</button>
+        <button id="call-next" type="button">Chamar próxima</button>
+
+        <div class="finish-form">
+          <label for="finish-number">Número da senha</label>
+          <input id="finish-number" type="number" min="1" step="1" placeholder="Ex.: 3" />
+          <button id="finish-ticket" type="button">Finalizar</button>
+        </div>
+      </section>
+
+      <p id="message" class="message" aria-live="polite"></p>
+
+      <section class="queue-status" aria-label="Estado da fila">
+        <article class="panel">
+          <h2>Senha em atendimento</h2>
+          <p id="current-ticket" class="ticket-value">Nenhuma</p>
+        </article>
+
+        <article class="panel">
+          <h2>Senhas aguardando</h2>
+          <ul id="waiting-list" class="ticket-list"></ul>
+        </article>
+
+        <article class="panel">
+          <h2>Senhas finalizadas</h2>
+          <ul id="finished-list" class="ticket-list"></ul>
+        </article>
+      </section>
+    </main>
+
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
